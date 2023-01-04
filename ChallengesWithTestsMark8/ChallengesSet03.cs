@@ -17,7 +17,7 @@ namespace ChallengesWithTestsMark8
 
             }
             return false;
-        }
+        }   // this one was not on the video and I had to really work it out
 
         public bool IsSumOfOddsOdd(IEnumerable<int> numbers)
         {
