@@ -53,11 +53,14 @@ public long Multiply(long factor1, long factor2)
 
         public string GetGreeting(string nameOfPerson)
         {
-            if (nameOfPerson == "");
+            if (nameOfPerson == "") 
             {
                 return "Hello!";
             }
+            else
+            { 
             return $"Hello, {nameOfPerson}!";
+             }
         }
 
         public string GetHey()
