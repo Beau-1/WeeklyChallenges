@@ -7,7 +7,11 @@ namespace ChallengesWithTestsMark8
     {
         public int GetNextNumberDivisibleByN(int startNumber, int n)
         {
-            throw new NotImplementedException();
+            while (startNumber % n != 0)
+            {
+                startNumber++;
+            }
+            return startNumber;
         }
 
         public void ChangeNamesOfBusinessesWithNoRevenueTo_CLOSED(Business[] businesses)
@@ -17,7 +21,14 @@ namespace ChallengesWithTestsMark8
 
         public bool IsAscendingOrder(int[] numbers)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < numbers.Length - 1; i++)
+            {
+                if (numbers[i] > numbers[i + 1])
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public int SumElementsThatFollowAnEven(int[] numbers)
@@ -32,12 +43,36 @@ namespace ChallengesWithTestsMark8
 
         public double[] GetEveryFourthElement(List<double> elements)
         {
-            throw new NotImplementedException();
+            if (elements == null)
+            {
+                throw new ArgumentNullException("The input list cannot be null.");
+            }
+
+            List<double> fourthElements = new List<double>();
+            for (int i = 3; i < elements.Count; i += 4)
+            {
+                fourthElements.Add(elements[i]);
+            }
+            return fourthElements.ToArray();
         }
 
         public bool TwoDifferentElementsInArrayCanSumToTargetNumber(int[] nums, int targetNumber)
         {
-            throw new NotImplementedException();
+            if (nums == null)
+            {
+                throw new ArgumentNullException("The input array cannot be null.");
+            }
+
+            HashSet<int> numSet = new HashSet<int>(nums);
+
+            foreach (int num in numSet)
+            {
+                if (numSet.Contains(targetNumber - num))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
